@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Crimson_Pro } from "next/font/google";
 import "./globals.css";
 
+import Header from "@/components/shared/Header";
+
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
@@ -27,7 +29,13 @@ export default function RootLayout({
 		lang="en"
 			className={`${spaceGrotesk.variable} ${crimsonPro.variable} h-full antialiased`}
 		>
-			<body className="min-h-full flex flex-col">{children}</body>
+			<body className="min-h-full flex flex-col">
+				<Header />
+
+				<main className="flex flex-1 flex-col w-full">
+					{children}
+				</main>
+			</body>
 		</html>
 	);
 }
