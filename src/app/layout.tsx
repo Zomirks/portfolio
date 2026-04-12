@@ -29,7 +29,7 @@ export default function RootLayout({
 		lang="en"
 			className={`${spaceGrotesk.variable} ${crimsonPro.variable} h-full antialiased`}
 		>
-			<body className="min-h-full flex flex-col">
+			<body id="top" className="min-h-full flex flex-col">
 				<Header />
 
 				<main className="flex flex-1 flex-col w-full">
