@@ -5,13 +5,13 @@ import "./globals.css";
 import Header from "@/components/shared/Header";
 
 const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
+	variable: "--font-space-grotesk",
+	subsets: ["latin"],
 });
 
 const crimsonPro = Crimson_Pro({
-  variable: "--font-crimson-pro",
-  subsets: ["latin"],
+	variable: "--font-crimson-pro",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
