@@ -1,11 +1,11 @@
-import { Menu } from "lucide-react"
+import { BurgerMenu } from "@components/ui/burger-menu";
 
-const Header = () => {
+export default function Header() {
 	return (
-		<header className="flex justify-between p-4">
+		<header className="flex items-center justify-between p-4 fixed z-10 w-full">
 			<div className="font-space">Cyril Fischer</div>
 
-			<Menu />
+				<BurgerMenu />
 		</header>
 	)
 }
