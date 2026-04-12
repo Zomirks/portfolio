@@ -1,22 +1,31 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-space: var(--font-space-grotesk);
-  --font-crimson: var(--font-crimson-pro);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-space: var(--font-space-grotesk);
+	--font-crimson: var(--font-crimson-pro);
+	--animate-blink-cursor: blink-cursor 1.2s step-end infinite;
+
+	@keyframes blink-cursor {
+		0%, 49% {
+			opacity: 1;
+		}
+		50%, 100% {
+			opacity: 0;
+		}
+	}
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 @layer base {
@@ -27,7 +36,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6, button {
-		font-family: var(--font-family);
+		font-family: var(--font-space);
 	}
 
 	html {
