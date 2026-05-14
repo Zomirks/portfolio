@@ -18,4 +18,5 @@ export const siteConfig = {
 		{ label: "Github", href: "https://github.com/Zomirks", icon: IconBrandGithub },
 		{ label: "LinkedIn", href: "https://www.linkedin.com/in/cyril-fischer/", icon: IconBrandLinkedin },
 	],
+	skills: ["Laravel", "React", "TypeScript", "Next.js", "PHP", "HTML", "JavaScript", "WordPress"],
 } as const;

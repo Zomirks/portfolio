@@ -37,6 +37,28 @@ export const metadata: Metadata = {
 	keywords: ["Développeur fullstack", "Strasbourg", "Laravel", "React", "TypeScript", "Next.js", "Freelance", "Développeur web"],
 };
 
+const [addressLocality, addressRegion, addressCountry] =
+	siteConfig.location.split(", ");
+
+const personJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: siteConfig.name,
+	jobTitle: siteConfig.job,
+	description: siteConfig.description,
+	url: siteConfig.url,
+	image: `${siteConfig.url}/photo-cyril-fischer.webp`,
+	email: `${siteConfig.email.user}@${siteConfig.email.domain}`,
+	address: {
+		"@type": "PostalAddress",
+		addressLocality,
+		addressRegion,
+		addressCountry,
+	},
+	sameAs: siteConfig.socials.map((social) => social.href),
+	knowsAbout: siteConfig.skills,
+};
+
 export default function RootLayout({
   	children,
 }: Readonly<{
@@ -48,6 +70,11 @@ export default function RootLayout({
 			className={`${spaceGrotesk.variable} ${crimsonPro.variable} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col">
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+				/>
+
 				<main className="flex flex-1 flex-col w-full">
 					{children}
 				</main>
