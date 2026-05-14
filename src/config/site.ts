@@ -3,7 +3,7 @@ import {IconBrandGithub, IconBrandLinkedin} from "@tabler/icons-react";
 export const siteConfig = {
 	name: "Cyril Fischer",
 	job: "Développeur Fullstack",
-	description: "Développeur Web avec 7+ ans d'expérience, spécialisé en Laravel, React, TypeScript & Next.js. Interfaces performantes, accessibles et pensées pour la production.",
+	description: "Développeur avec 7+ ans d'expérience web, spécialisé en Laravel, React, TypeScript & Next.js. Interfaces performantes, accessibles et pensées pour la production.",
 	location: "Strasbourg, Alsace, France",
 	url: "https://www.cyril-fischer.com",
 	cv: {

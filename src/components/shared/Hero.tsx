@@ -14,12 +14,16 @@ export default function Hero() {
 					<div className="text-center">
 						<h1 className="mb-4">
 							<span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight">
-							{siteConfig.job}
+								{siteConfig.job}
 							</span>
 							<span className="block text-2xl sm:text-3xl md:text-4xl mt-2">
 								Cyril <strong className="uppercase">Fischer</strong>
 							</span>
 						</h1>
+
+						<p className="mx-auto max-w-2xl text-lg sm:text-xl text-foreground/80">
+							{siteConfig.description}
+						</p>
 
 						<a
 							href={siteConfig.cv.href}
