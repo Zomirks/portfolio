@@ -16,11 +16,11 @@ export default function Hero() {
 						<TypingAnimation
 							typeSpeed={64}
 							as="h1"
-							words={[siteConfig.title]}
+							words={[siteConfig.job]}
 							className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-4"
 							cursorStyle="underscore"
 						>
-							{siteConfig.title}
+							{siteConfig.job}
 						</TypingAnimation>
 						<p className="text-2xl sm:text-3xl md:text-4xl">Cyril <strong className="uppercase">Fischer</strong></p>
 

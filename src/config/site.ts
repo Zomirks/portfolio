@@ -2,7 +2,7 @@ import {IconBrandGithub, IconBrandLinkedin} from "@tabler/icons-react";
 
 export const siteConfig = {
 	name: "Cyril Fischer",
-	title: "Développeur Fullstack",
+	job: "Développeur Fullstack",
 	location: "Strasbourg, Alsace, France",
 	cv: {
 		href: "/cv-cyril-fischer-developpeur-fullstack.pdf",
