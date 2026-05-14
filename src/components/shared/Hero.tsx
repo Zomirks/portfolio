@@ -3,7 +3,6 @@ import { IconDownload } from "@tabler/icons-react";
 import { siteConfig } from "@/config/site";
 
 import { DotPattern } from "@components/ui/dot-pattern";
-import { TypingAnimation } from "@/components/ui/typing-animation"
 import { cn } from "@/lib/utils";
 import SocialsList from "./SocialsList";
 
@@ -13,16 +12,14 @@ export default function Hero() {
 			<div className="relative flex flex-col w-full h-full min-h-screen py-8">
 				<div className="relative flex flex-col flex-1 items-center justify-center space-x-6 w-full">
 					<div className="text-center">
-						<TypingAnimation
-							typeSpeed={64}
-							as="h1"
-							words={[siteConfig.job]}
-							className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-4"
-							cursorStyle="underscore"
-						>
+						<h1 className="mb-4">
+							<span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight">
 							{siteConfig.job}
-						</TypingAnimation>
-						<p className="text-2xl sm:text-3xl md:text-4xl">Cyril <strong className="uppercase">Fischer</strong></p>
+							</span>
+							<span className="block text-2xl sm:text-3xl md:text-4xl mt-2">
+								Cyril <strong className="uppercase">Fischer</strong>
+							</span>
+						</h1>
 
 						<a
 							href={siteConfig.cv.href}
