@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from '@vercel/analytics/next';
+
 import { siteConfig } from "@/config/site";
 import { Space_Grotesk, Crimson_Pro } from "next/font/google";
 import "./globals.css";
@@ -77,6 +79,7 @@ export default function RootLayout({
 
 				<main className="flex flex-1 flex-col w-full">
 					{children}
+					<Analytics />
 				</main>
 			</body>
 		</html>
