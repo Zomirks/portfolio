@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { siteConfig } from "@/config/site";
 import { Space_Grotesk, Crimson_Pro } from "next/font/google";
@@ -80,6 +81,7 @@ export default function RootLayout({
 				<main className="flex flex-1 flex-col w-full">
 					{children}
 					<Analytics />
+					<SpeedInsights />
 				</main>
 			</body>
 		</html>
