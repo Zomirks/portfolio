@@ -80,9 +80,10 @@ export default function RootLayout({
 
 				<main className="flex flex-1 flex-col w-full">
 					{children}
-					<Analytics />
-					<SpeedInsights />
 				</main>
+				
+				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
