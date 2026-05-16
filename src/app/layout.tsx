@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -38,6 +38,13 @@ export const metadata: Metadata = {
 	creator: siteConfig.name,
 	robots: { index: true, follow: true , googleBot: { index: true, follow: true } },
 	keywords: ["Développeur fullstack", "Strasbourg", "Laravel", "React", "TypeScript", "Next.js", "Freelance", "Développeur web"],
+};
+
+export const viewport: Viewport = {
+	themeColor: "#1a1818",
+	colorScheme: "dark",
+	width: "device-width",
+	initialScale: 1,
 };
 
 const [addressLocality, addressRegion, addressCountry] =
