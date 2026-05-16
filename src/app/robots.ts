@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
 		rules: {
 			userAgent: "*",
 			allow: "/",
+			disallow: "/cv-cyril-fischer-developpeur-fullstack.pdf"
 		},
 		sitemap: `${siteConfig.url}/sitemap.xml`,
 		host: siteConfig.url,
