@@ -12,12 +12,12 @@ export default function Hero() {
 			<div className="relative flex flex-col w-full h-full min-h-screen py-8">
 				<div className="relative flex flex-col flex-1 items-center justify-center space-x-6 w-full">
 					<div className="text-center">
-						<h1 className="mb-4">
-							<span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight">
-								{siteConfig.job}
-							</span>
-							<span className="block text-2xl sm:text-3xl md:text-4xl mt-2">
+						<h1 className="mb-6">
+							<span className="block text-2xl sm:text-3xl md:text-4xl">
 								Cyril <strong className="uppercase">Fischer</strong>
+							</span>
+							<span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight font-extrabold">
+								{siteConfig.job}
 							</span>
 						</h1>
 

@@ -3,16 +3,16 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { siteConfig } from "@/config/site";
-import { Space_Grotesk, Crimson_Pro } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-	variable: "--font-space-grotesk",
+const fraunces = Fraunces({
+	variable: "--font-fraunces",
 	subsets: ["latin"],
 });
 
-const crimsonPro = Crimson_Pro({
-	variable: "--font-crimson-pro",
+const inter = Inter({
+	variable: "--font-inter",
 	subsets: ["latin"],
 });
 
@@ -77,7 +77,7 @@ export default function RootLayout({
 	return (
 		<html
 		lang="fr"
-			className={`${spaceGrotesk.variable} ${crimsonPro.variable} h-full antialiased`}
+			className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col">
 				<script
