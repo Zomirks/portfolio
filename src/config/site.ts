@@ -19,4 +19,10 @@ export const siteConfig = {
 		{ label: "LinkedIn", href: "https://www.linkedin.com/in/cyril-fischer/", icon: IconBrandLinkedin },
 	],
 	skills: ["Laravel", "React", "TypeScript", "Next.js", "PHP", "HTML", "JavaScript", "WordPress"],
+	languages: [
+		{ name: "Français", level: "Langue Maternelle"},
+		{ name: "Anglais", level: "Professionnel"},
+		{ name: "Allemand", level: "Débutant"},
+		{ name: "Japonais", level: "Autodidacte" }
+	]
 } as const;
