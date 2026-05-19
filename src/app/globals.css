@@ -13,6 +13,7 @@
 	--font-fraunces: var(--font-fraunces);
 	--font-inter: var(--font-inter);
 	--animate-blink-cursor: blink-cursor 1.2s step-end infinite;
+	--radius: 16px;
 
 	@keyframes blink-cursor {
 		0%, 49% {
@@ -36,9 +37,9 @@
 
 @layer base {
 	body {
-	  background: var(--background);
-	  color: var(--foreground);
-	  font-family: var(--font-inter), Georgia, serif;
+		background: var(--background);
+		color: var(--foreground);
+		font-family: var(--font-inter), Georgia, serif;
 	}
 
 	h1, h2, h3, h4, h5, h6, button {
@@ -48,4 +49,61 @@
 	html {
 		scroll-behavior: smooth;
 	}
+}
+
+.frame-container {
+	min-height: 50vh;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.panel-header {
+	display: flex;
+	height: 72px;
+	width: 100%;
+}
+
+.notch-title {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-shrink: 0;
+	padding: 0 48px 0 12px;
+	
+	& :is(h1, h2, h3, h4, h5, h6) {
+		font-size: 48px;
+		font-style: italic;
+		white-space: nowrap;
+	}
+}
+
+.notch-roof {
+	flex-grow: 1;
+	background-color: var(--surface);
+	position: relative;
+	border-top-left-radius: var(--radius);
+	border-top-right-radius: var(--radius);
+  
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: calc(var(--radius) * -1);
+		width: var(--radius);
+		height: var(--radius);
+		background: radial-gradient(circle at top left, transparent var(--radius), var(--surface) var(--radius));
+	}
+}
+
+.inner-panel {
+	flex-grow: 1;
+	background-color: var(--surface);
+	border-bottom-left-radius: var(--radius);
+	border-bottom-right-radius: var(--radius);
+	border-top-left-radius: var(--radius);
+}
+
+.panel-content {
+	padding: 24px;
 }

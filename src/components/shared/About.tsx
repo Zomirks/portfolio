@@ -5,25 +5,33 @@ import me from "@/assets/images/cyril-fischer.webp";
 
 export default function About() {
 	return (
-		<section id="about" className="grid grid-cols-3 min-h-screen">
-			<div className="col-span-2">
-				<h2>A propos</h2>
-
-				{siteConfig.languages.length > 0 && (
-					siteConfig.languages.map((language) => {
-						return <div key={language.name}>
-							<p>{language.name}: {language.level}</p>
+		<section id="about" className="frame-container container mx-auto py-24">
+			<div className="panel-header">
+				<div className="notch-title">
+					<h3>A propos</h3>
 						</div>
-					})
-				)}
+				<div className="notch-roof" />
 			</div>
-			<div className="flex justify-between items-center">
+
+			<div className="inner-panel">
+				<div className="panel-content">
+					<div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+						<div className="flex-1 space-y-4">
+							{siteConfig.bio.map((paragraph, i) => (
+								<p key={i}>{paragraph}</p>
+							))}
+						</div>
+
+						<div className="self-center lg:self-start">
 				<Image
 					src={me}
 					alt={siteConfig.name}
-					className="rounded-full size-128 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+								className="w-48 h-48 lg:w-44 lg:h-44 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
 					placeholder="blur"
 				/>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	)
