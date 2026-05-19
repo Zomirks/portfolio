@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
+import LanguageList from "@/components/shared/LanguageList";
 
 import me from "@/assets/images/cyril-fischer.webp";
 
@@ -9,7 +10,7 @@ export default function About() {
 			<div className="panel-header">
 				<div className="notch-title">
 					<h3>A propos</h3>
-						</div>
+				</div>
 				<div className="notch-roof" />
 			</div>
 
@@ -20,15 +21,16 @@ export default function About() {
 							{siteConfig.bio.map((paragraph, i) => (
 								<p key={i}>{paragraph}</p>
 							))}
+							<LanguageList />
 						</div>
 
 						<div className="self-center lg:self-start">
-				<Image
-					src={me}
-					alt={siteConfig.name}
+							<Image
+								src={me}
+								alt={siteConfig.name}
 								className="w-48 h-48 lg:w-44 lg:h-44 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-					placeholder="blur"
-				/>
+								placeholder="blur"
+							/>
 						</div>
 					</div>
 				</div>
