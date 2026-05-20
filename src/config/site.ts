@@ -27,6 +27,5 @@ export const siteConfig = {
 		{ name: "Français", level: "Langue Maternelle"},
 		{ name: "Anglais", level: "Professionnel"},
 		{ name: "Allemand", level: "Débutant"},
-		{ name: "Japonais", level: "Autodidacte" }
 	]
 } as const;

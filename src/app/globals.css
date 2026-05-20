@@ -107,3 +107,32 @@
 .panel-content {
 	padding: 24px;
 }
+
+.btn-back-to-top {
+	background-color: var(--foreground);
+	position: fixed;
+	bottom: 16px;
+	right: 16px;
+	display: flex;
+	height: 48px;
+	width: 48px;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: var(--radius);
+	transform: translateY(200%);
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+	&.is-visible {
+		transform: translateY(0);
+	}
+
+	&:hover {
+		background-color: var(--foreground-muted);
+	}
+
+	@media (width >= theme(--breakpoint-md)) {
+		border-radius: var(--radius) var(--radius) 0 0;
+		bottom: 0;
+	}
+}
