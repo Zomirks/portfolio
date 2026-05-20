@@ -9,10 +9,17 @@ export type Certification = {
 
 export const certifications: Certification[] = [
 	{
-		school: 'Alyra, l\'école blockchain & IA',
-		name: 'Certification professionnelle RS6515',
-		description: 'Développer une application décentralisée avec les technologies blockchain',
-		startYear: 2025,
+		school: 'Lycée André Maurois',
+		locate: 'Bischwiller',
+		name: "Baccalauréat Economique et Social - option Mathématiques",
+		startYear: 2015
+	},
+	{
+		school: 'IUT',
+		locate: 'Haguenau',
+		name: 'DUT MMI (Métiers du Multimédia et de l\'Internet)',
+		startYear: 2015,
+		endYear: 2017
 	},
 	{
 		school: 'IUT',
@@ -23,16 +30,9 @@ export const certifications: Certification[] = [
 		endYear: 2018
 	},
 	{
-		school: 'IUT',
-		locate: 'Haguenau',
-		name: 'DUT MMI (Métiers du Multimédia et de l\'Internet)',
-		startYear: 2015,
-		endYear: 2017
-	},
-	{
-		school: 'Lycée André Maurois',
-		locate: 'Bischwiller',
-		name: "Baccalauréat Economique et Social - option Mathématiques",
-		startYear: 2015
+		school: 'Alyra, l\'école blockchain & IA',
+		name: 'Certification professionnelle RS6515',
+		description: 'Développer une application décentralisée avec les technologies blockchain',
+		startYear: 2025,
 	}
 ];
