@@ -16,7 +16,7 @@ export default function About() {
 
 			<div className="inner-panel">
 				<div className="panel-content">
-					<div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+					<div className="flex flex-col md:flex-row gap-10 lg:gap-16 items-start">
 						<div className="flex-1 space-y-4">
 							{siteConfig.bio.map((paragraph, i) => (
 								<p key={i}>{paragraph}</p>
@@ -24,11 +24,11 @@ export default function About() {
 							<LanguageList />
 						</div>
 
-						<div className="self-center lg:self-start">
+						<div className="self-center md:self-start">
 							<Image
 								src={me}
 								alt={siteConfig.name}
-								className="w-48 h-48 lg:w-44 lg:h-44 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+								className="w-64 h-64 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
 								placeholder="blur"
 							/>
 						</div>
