@@ -1,6 +1,6 @@
 import { ChevronsDownIcon } from "lucide-react";
 import { siteConfig } from "@/config/site";
-
+import { IconDownload } from "@tabler/icons-react";
 import { DotPattern } from "@components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import SocialsList from "./SocialsList";
