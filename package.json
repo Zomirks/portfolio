@@ -7,7 +7,11 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "eslint"
+		"lint": "eslint",
+		"type-check": "tsc --noEmit",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"validate": "pnpm lint && pnpm type-check"
 	},
 	"packageManager": "pnpm@10.28.0",
 	"dependencies": {
@@ -34,6 +38,7 @@
 		"babel-plugin-react-compiler": "1.0.0",
 		"eslint": "^9.39.4",
 		"eslint-config-next": "16.2.4",
+		"prettier": "^3.8.3",
 		"tailwindcss": "^4.2.4",
 		"typescript": "^6.0.3"
 	},
