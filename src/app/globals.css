@@ -1,138 +1,150 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-	--color-background: var(--background);
-	--color-surface: var(--surface);
-	--color-foreground: var(--foreground);
-	--color-foreground-muted: var(--foreground-muted);
-	--color-foreground-subtle: var(--foreground-subtle);
-	--font-fraunces: var(--font-fraunces);
-	--font-inter: var(--font-inter);
-	--animate-blink-cursor: blink-cursor 1.2s step-end infinite;
-	--radius: 16px;
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-foreground: var(--foreground);
+    --color-foreground-muted: var(--foreground-muted);
+    --color-foreground-subtle: var(--foreground-subtle);
+    --font-fraunces: var(--font-fraunces);
+    --font-inter: var(--font-inter);
+    --animate-blink-cursor: blink-cursor 1.2s step-end infinite;
+    --radius: 16px;
 
-	@keyframes blink-cursor {
-		0%, 49% {
-			opacity: 1;
-		}
-		50%, 100% {
-			opacity: 0;
-		}
-	}
+    @keyframes blink-cursor {
+        0%,
+        49% {
+            opacity: 1;
+        }
+        50%,
+        100% {
+            opacity: 0;
+        }
+    }
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--background: #1a1818;
-		--surface: #252222;
-		--foreground: #e8e6e6;
-		--foreground-muted: #8a8585;
-		--foreground-subtle: #6b6565;
-	}
+    :root {
+        --background: #1a1818;
+        --surface: #252222;
+        --foreground: #e8e6e6;
+        --foreground-muted: #8a8585;
+        --foreground-subtle: #6b6565;
+    }
 }
 
 @layer base {
-	body {
-		background: var(--background);
-		color: var(--foreground);
-		font-family: var(--font-inter), Georgia, serif;
-	}
+    body {
+        background: var(--background);
+        color: var(--foreground);
+        font-family: var(--font-inter), Georgia, serif;
+    }
 
-	h1, h2, h3, h4, h5, h6, button {
-		font-family: var(--font-fraunces);
-	}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button {
+        font-family: var(--font-fraunces);
+    }
 
-	html {
-		scroll-behavior: smooth;
-	}
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 .frame-container {
-	min-height: 50vh;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
+    min-height: 50vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .panel-header {
-	display: flex;
-	height: 72px;
-	width: 100%;
+    display: flex;
+    height: 72px;
+    width: 100%;
 }
 
 .notch-title {
-	align-items: center;
-	box-sizing: border-box;
-	display: flex;
-	flex-shrink: 0;
-	padding: 0 48px 0 12px;
-	
-	& :is(h1, h2, h3, h4, h5, h6) {
-		font-size: 48px;
-		font-style: italic;
-		white-space: nowrap;
-	}
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-shrink: 0;
+    padding: 0 48px 0 12px;
+
+    & :is(h1, h2, h3, h4, h5, h6) {
+        font-size: 48px;
+        font-style: italic;
+        white-space: nowrap;
+    }
 }
 
 .notch-roof {
-	flex-grow: 1;
-	background-color: var(--surface);
-	position: relative;
-	border-top-left-radius: var(--radius);
-	border-top-right-radius: var(--radius);
-  
-	&::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: calc(var(--radius) * -1);
-		width: var(--radius);
-		height: var(--radius);
-		background: radial-gradient(circle at top left, transparent var(--radius), var(--surface) var(--radius));
-	}
+    flex-grow: 1;
+    background-color: var(--surface);
+    position: relative;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: calc(var(--radius) * -1);
+        width: var(--radius);
+        height: var(--radius);
+        background: radial-gradient(
+            circle at top left,
+            transparent var(--radius),
+            var(--surface) var(--radius)
+        );
+    }
 }
 
 .inner-panel {
-	flex-grow: 1;
-	background-color: var(--surface);
-	border-bottom-left-radius: var(--radius);
-	border-bottom-right-radius: var(--radius);
-	border-top-left-radius: var(--radius);
+    flex-grow: 1;
+    background-color: var(--surface);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    border-top-left-radius: var(--radius);
 }
 
 .panel-content {
-	padding: 24px;
+    padding: 24px;
 }
 
 .btn-back-to-top {
-	background-color: var(--foreground);
-	position: fixed;
-	bottom: 16px;
-	right: 16px;
-	display: flex;
-	height: 48px;
-	width: 48px;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	border-radius: var(--radius);
-	transform: translateY(200%);
-	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--foreground);
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    height: 48px;
+    width: 48px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transform: translateY(200%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-	&.is-visible {
-		transform: translateY(0);
-	}
+    &.is-visible {
+        transform: translateY(0);
+    }
 
-	&:hover {
-		background-color: var(--foreground-muted);
-	}
+    &:hover {
+        background-color: var(--foreground-muted);
+    }
 
-	@media (width >= theme(--breakpoint-md)) {
-		border-radius: var(--radius) var(--radius) 0 0;
-		bottom: 0;
-	}
+    @media (width >= theme(--breakpoint-md)) {
+        border-radius: var(--radius) var(--radius) 0 0;
+        bottom: 0;
+    }
 }
