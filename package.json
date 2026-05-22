@@ -13,7 +13,7 @@
         "format:check": "prettier --check .",
         "validate": "pnpm lint && pnpm type-check"
     },
-    "packageManager": "pnpm@10.28.0",
+    "packageManager": "pnpm@11.2.2",
     "dependencies": {
         "@tabler/icons-react": "^3.41.1",
         "@vercel/analytics": "^2.0.1",
