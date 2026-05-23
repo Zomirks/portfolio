@@ -11,7 +11,8 @@
         "type-check": "tsc --noEmit",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "validate": "pnpm lint && pnpm type-check"
+        "validate": "pnpm lint && pnpm type-check && pnpm format:check",
+        "prepare": "husky"
     },
     "packageManager": "pnpm@11.2.2",
     "dependencies": {
@@ -46,5 +47,9 @@
     },
     "engines": {
         "pnpm": ">=10"
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js,mjs,json,css,md}": "prettier --write",
+        "*.{ts,tsx}": "eslint --max-warnings 0"
     }
 }
