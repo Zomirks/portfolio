@@ -12,7 +12,10 @@
         "format": "prettier --write .",
         "format:check": "prettier --check .",
         "validate": "pnpm lint && pnpm type-check && pnpm format:check",
-        "prepare": "husky"
+        "prepare": "husky",
+        "test": "vitest",
+        "test:ui": "vitest --ui",
+        "coverage": "vitest run --coverage"
     },
     "packageManager": "pnpm@11.2.2",
     "dependencies": {
