@@ -48,7 +48,7 @@ export default function Certifications() {
                                             </p>
                                             <p className="text-foreground-muted">
                                                 {cert.school}
-                                                {cert.locate && <>, {cert.locate}</>}
+                                                {cert.location && <>, {cert.location}</>}
                                             </p>
                                             {cert.description && (
                                                 <p className="font-fraunces italic text-foreground-subtle pt-1 leading-relaxed">
