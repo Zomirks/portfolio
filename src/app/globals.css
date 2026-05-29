@@ -78,12 +78,16 @@
     box-sizing: border-box;
     display: flex;
     flex-shrink: 0;
-    padding: 0 48px 0 12px;
+    padding: 0 24px 0 12px;
 
     & :is(h1, h2, h3, h4, h5, h6) {
-        font-size: 48px;
+        font-size: clamp(1.125rem, 5vw, 3rem);
         font-style: italic;
         white-space: nowrap;
+    }
+
+    @media (width >= theme(--breakpoint-md)) {
+        padding: 0 48px 0 12px;
     }
 }
 

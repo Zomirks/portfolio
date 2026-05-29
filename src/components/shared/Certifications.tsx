@@ -1,0 +1,68 @@
+import { certifications, type Certification } from '@/config/certifications';
+import { ArrowUpRightIcon } from 'lucide-react';
+
+export default function Certifications() {
+    const sorted = [...certifications].sort((a, b) => {
+        if (b.startYear !== a.startYear) return b.startYear - a.startYear;
+        return (b.endYear ?? b.startYear) - (a.endYear ?? a.startYear);
+    });
+
+    return (
+        <section
+            id="certifications"
+            className="frame-container container mx-auto py-24 px-4 md:px-0"
+        >
+            <div className="panel-header">
+                <div className="notch-title">
+                    <h3>Certifications & Formations</h3>
+                </div>
+                <div className="notch-roof" />
+            </div>
+
+            <div className="inner-panel">
+                <div className="panel-content">
+                    <ul className="divide-y divide-foreground-subtle/30">
+                        {sorted.map((cert: Certification) => {
+                            const Wrapper = cert.link ? 'a' : 'div';
+                            const wrapperProps = cert.link
+                                ? { href: cert.link, target: '_blank', rel: 'noopener noreferrer' }
+                                : {};
+
+                            return (
+                                <li key={`${cert.school}-${cert.name}`}>
+                                    <Wrapper
+                                        {...wrapperProps}
+                                        className="group grid grid-cols-1 md:grid-cols-[10rem_1fr] gap-3 md:gap-12 py-8 transition-colors"
+                                    >
+                                        <div className="font-fraunces italic text-2xl md:text-3xl text-foreground-muted group-hover:text-foreground transition-colors duration-300 tabular-nums">
+                                            {cert.endYear
+                                                ? `${cert.startYear}-${cert.endYear}`
+                                                : cert.startYear}
+                                        </div>
+                                        <div className="space-y-1.5">
+                                            <p className="text-xl md:text-2xl text-foreground leading-snug flex items-start gap-3">
+                                                <span>{cert.name}</span>
+                                                {cert.link && (
+                                                    <ArrowUpRightIcon className="size-5 shrink-0 mt-1 opacity-60 group-hover:opacity-100 group-hover:size-6 transition-all -translate-x-2 translate-y-1 group-hover:-translate-y-1 group-hover:translate-x-0" />
+                                                )}
+                                            </p>
+                                            <p className="text-foreground-muted">
+                                                {cert.school}
+                                                {cert.locate && <>, {cert.locate}</>}
+                                            </p>
+                                            {cert.description && (
+                                                <p className="font-fraunces italic text-foreground-subtle pt-1 leading-relaxed">
+                                                    {cert.description}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </Wrapper>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+            </div>
+        </section>
+    );
+}
