@@ -6,7 +6,7 @@ import me from '@/assets/images/cyril-fischer.webp';
 
 export default function About() {
     return (
-        <section id="about" className="frame-container container mx-auto py-24">
+        <section id="about" className="frame-container container mx-auto py-24 px-4 md:px-0">
             <div className="panel-header">
                 <div className="notch-title">
                     <h3>A propos</h3>
