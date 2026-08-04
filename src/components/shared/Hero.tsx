@@ -8,9 +8,9 @@ export default function Hero() {
     return (
         <section
             id="top"
-            className="relative min-h-screen flex items-center justify-center overflow-hidden"
+            className="relative min-h-dvh flex items-center justify-center overflow-hidden"
         >
-            <div className="relative flex flex-col w-full h-full min-h-screen py-8">
+            <div className="relative flex flex-col w-full h-full min-h-dvh py-8">
                 <div className="relative flex flex-col flex-1 items-center justify-center space-x-6 w-full">
                     <div className="text-center">
                         <h1 className="mb-6">

@@ -10,8 +10,8 @@ export function BurgerMenu() {
     };
 
     return (
-        <div className="p-2">
+        <button className="p-2 cursor-pointer">
             {isOpen ? <IconX onClick={toggleMenu} /> : <IconMenu onClick={toggleMenu} />}
-        </div>
+        </button>
     );
 }
