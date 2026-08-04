@@ -1,5 +1,6 @@
 import { certifications, type Certification } from '@/config/certifications';
 import { IconArrowUpRight } from '@tabler/icons-react';
+import Reveal from '../ui/reveal';
 
 export default function Certifications() {
     const sorted = [...certifications].sort((a, b) => {
@@ -22,14 +23,18 @@ export default function Certifications() {
             <div className="inner-panel">
                 <div className="panel-content">
                     <ul className="divide-y divide-foreground-subtle/30">
-                        {sorted.map((cert: Certification) => {
+                        {sorted.map((cert: Certification, i) => {
                             const Wrapper = cert.link ? 'a' : 'div';
                             const wrapperProps = cert.link
                                 ? { href: cert.link, target: '_blank', rel: 'noopener noreferrer' }
                                 : {};
 
                             return (
-                                <li key={`${cert.school}-${cert.name}`}>
+                                <Reveal
+                                    as="li"
+                                    key={`${cert.school}-${cert.name}`}
+                                    delay={i * 0.08}
+                                >
                                     <Wrapper
                                         {...wrapperProps}
                                         className="group grid grid-cols-1 md:grid-cols-[10rem_1fr] gap-3 md:gap-12 py-8 transition-colors"
@@ -57,7 +62,7 @@ export default function Certifications() {
                                             )}
                                         </div>
                                     </Wrapper>
-                                </li>
+                                </Reveal>
                             );
                         })}
                     </ul>
