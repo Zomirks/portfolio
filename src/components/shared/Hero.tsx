@@ -7,7 +7,7 @@ import SocialsList from './SocialsList';
 export default function Hero() {
     return (
         <section
-            id="hero"
+            id="top"
             className="relative min-h-screen flex items-center justify-center overflow-hidden"
         >
             <div className="relative flex flex-col w-full h-full min-h-screen py-8">

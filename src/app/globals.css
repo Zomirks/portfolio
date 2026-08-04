@@ -55,6 +55,10 @@
 
     html {
         scroll-behavior: smooth;
+
+        @media (prefers-reduced-motion: reduce) {
+            scroll-behavior: auto;
+        }
     }
 }
 
@@ -125,6 +129,7 @@
 
 .btn-back-to-top {
     background-color: var(--foreground);
+    color: var(--background);
     position: fixed;
     bottom: 16px;
     right: 16px;
@@ -135,12 +140,7 @@
     align-items: center;
     cursor: pointer;
     border-radius: var(--radius);
-    transform: translateY(200%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-    &.is-visible {
-        transform: translateY(0);
-    }
+    transition: background-color 0.2s ease;
 
     &:hover {
         background-color: var(--foreground-muted);
@@ -149,5 +149,27 @@
     @media (width >= theme(--breakpoint-md)) {
         border-radius: var(--radius) var(--radius) 0 0;
         bottom: 0;
+    }
+}
+
+@supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+        .btn-back-to-top {
+            animation: back-to-top-in linear both;
+            animation-timeline: scroll(root block);
+            animation-range: 50vh 60vh;
+        }
+    }
+}
+
+@keyframes back-to-top-in {
+    from {
+        visibility: hidden;
+        transform: translateY(200%);
+    }
+
+    to {
+        visibility: visible;
+        transform: translateY(0);
     }
 }
