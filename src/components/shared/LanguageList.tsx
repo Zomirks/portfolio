@@ -6,17 +6,17 @@ export default function LanguageList() {
             <p className="text-xs uppercase tracking-widest text-foreground-subtle mb-3 text-center md:text-start">
                 Langues
             </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-2">
+            <ul className="flex flex-wrap justify-center md:justify-start gap-2">
                 {siteConfig.languages.map((language) => (
-                    <div
+                    <li
                         key={language.name}
-                        className="border border-neutral-500/60 rounded-sm px-3 py-1 text-sm hover:bg-foreground hover:text-background"
+                        className="rounded-sm border border-foreground-subtle/30 px-2.5 py-1 text-sm"
                     >
                         <span>{language.name}</span>
                         <span className="text-foreground-muted ml-2">· {language.level}</span>
-                    </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
         </div>
     );
 }

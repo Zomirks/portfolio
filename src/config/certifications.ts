@@ -1,6 +1,6 @@
 export type Certification = {
     school: string;
-    locate?: string;
+    location?: string;
     name: string;
     description?: string;
     link?: string;
@@ -11,20 +11,20 @@ export type Certification = {
 export const certifications: Certification[] = [
     {
         school: 'Lycée André Maurois',
-        locate: 'Bischwiller',
+        location: 'Bischwiller',
         name: 'Baccalauréat Economique et Social - option Mathématiques',
         startYear: 2015,
     },
     {
         school: 'IUT',
-        locate: 'Haguenau',
+        location: 'Haguenau',
         name: "DUT MMI (Métiers du Multimédia et de l'Internet)",
         startYear: 2015,
         endYear: 2017,
     },
     {
         school: 'IUT',
-        locate: 'Haguenau',
+        location: 'Haguenau',
         name: "Licence professionnelle TAIS(Techniques et Activités de l'Image et du Son) - parcours Développement Web",
         description: 'Licence effectuée en Alternance',
         startYear: 2017,

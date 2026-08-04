@@ -28,21 +28,19 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #1a1818;
-        --surface: #252222;
-        --foreground: #e8e6e6;
-        --foreground-muted: #8a8585;
-        --foreground-subtle: #6b6565;
-    }
+:root {
+    --background: #1a1818;
+    --surface: #252222;
+    --foreground: #e8e6e6;
+    --foreground-muted: #8a8585;
+    --foreground-subtle: #6b6565;
 }
 
 @layer base {
     body {
         background: var(--background);
         color: var(--foreground);
-        font-family: var(--font-inter), Georgia, serif;
+        font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     }
 
     h1,
@@ -52,11 +50,15 @@
     h5,
     h6,
     button {
-        font-family: var(--font-fraunces);
+        font-family: var(--font-fraunces), ui-serif, Georgia, serif;
     }
 
     html {
         scroll-behavior: smooth;
+
+        @media (prefers-reduced-motion: reduce) {
+            scroll-behavior: auto;
+        }
     }
 }
 
@@ -91,6 +93,13 @@
     }
 }
 
+.section-title {
+    font-size: clamp(1.125rem, 5vw, 3rem);
+    font-style: italic;
+    line-height: 1.1;
+    padding-bottom: 0.15em;
+}
+
 .notch-roof {
     flex-grow: 1;
     background-color: var(--surface);
@@ -123,10 +132,44 @@
 
 .panel-content {
     padding: 24px;
+
+    @media (width >= theme(--breakpoint-md)) {
+        padding: 40px;
+    }
+}
+
+.frame-mirrored {
+    .panel-header {
+        flex-direction: row-reverse;
+    }
+
+    .notch-title {
+        padding: 0 12px 0 24px;
+
+        @media (width >= theme(--breakpoint-md)) {
+            padding: 0 12px 0 48px;
+        }
+    }
+
+    .notch-roof::after {
+        left: auto;
+        right: calc(var(--radius) * -1);
+        background: radial-gradient(
+            circle at top right,
+            transparent var(--radius),
+            var(--surface) var(--radius)
+        );
+    }
+
+    .inner-panel {
+        border-top-left-radius: 0;
+        border-top-right-radius: var(--radius);
+    }
 }
 
 .btn-back-to-top {
     background-color: var(--foreground);
+    color: var(--background);
     position: fixed;
     bottom: 16px;
     right: 16px;
@@ -137,12 +180,7 @@
     align-items: center;
     cursor: pointer;
     border-radius: var(--radius);
-    transform: translateY(200%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-    &.is-visible {
-        transform: translateY(0);
-    }
+    transition: background-color 0.2s ease;
 
     &:hover {
         background-color: var(--foreground-muted);
@@ -151,5 +189,27 @@
     @media (width >= theme(--breakpoint-md)) {
         border-radius: var(--radius) var(--radius) 0 0;
         bottom: 0;
+    }
+}
+
+@supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+        .btn-back-to-top {
+            animation: back-to-top-in linear both;
+            animation-timeline: scroll(root block);
+            animation-range: 50vh 60vh;
+        }
+    }
+}
+
+@keyframes back-to-top-in {
+    from {
+        visibility: hidden;
+        transform: translateY(200%);
+    }
+
+    to {
+        visibility: visible;
+        transform: translateY(0);
     }
 }
