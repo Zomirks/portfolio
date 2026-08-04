@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
         location: 'Strasbourg',
         link: 'https://www.linkedin.com/company/toastate-com/',
         startDate: '2017-04',
-        endDate: '2017-07',
+        endDate: '2017-06',
         description:
             "Réalisation d'un back-office pour une chaîne d'hôtels, leur permettant de mettre à disposition leur salle de sport pour les non clients de l'hôtel.",
         highlights: [
@@ -37,7 +37,7 @@ export const experiences: Experience[] = [
         location: 'Strasbourg',
         link: 'https://www.animaweb.fr/',
         startDate: '2017-09',
-        endDate: '2018-09',
+        endDate: '2018-08',
         highlights: [
             'Développement de multiples sites vitrines sur WordPress (en développant le thème sur-mesure)',
             'Mise à jour de divers sites WordPress existants',
