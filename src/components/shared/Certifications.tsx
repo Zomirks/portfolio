@@ -11,7 +11,7 @@ export default function Certifications() {
     return (
         <section
             id="certifications"
-            className="frame-container container mx-auto py-24 px-4 md:px-0"
+            className="frame-container frame-mirrored container mx-auto py-24 px-4 md:px-0"
         >
             <div className="panel-header">
                 <div className="notch-title">
