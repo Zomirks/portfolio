@@ -1,6 +1,5 @@
-import { ChevronsDownIcon } from 'lucide-react';
 import { siteConfig } from '@/config/site';
-import { IconDownload } from '@tabler/icons-react';
+import { IconChevronsDown, IconDownload } from '@tabler/icons-react';
 import { DotPattern } from '@components/ui/dot-pattern';
 import { cn } from '@/lib/utils';
 import SocialsList from './SocialsList';
@@ -43,7 +42,7 @@ export default function Hero() {
                 </div>
                 <div className="flex flex-col items-center font-fraunces text-foreground-muted">
                     <div className="font-light mb-2 uppercase">Scroll</div>
-                    <ChevronsDownIcon className="animate-bounce" />
+                    <IconChevronsDown className="animate-bounce" />
                 </div>
 
                 <DotPattern

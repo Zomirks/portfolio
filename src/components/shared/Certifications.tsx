@@ -1,5 +1,5 @@
 import { certifications, type Certification } from '@/config/certifications';
-import { ArrowUpRightIcon } from 'lucide-react';
+import { IconArrowUpRight } from '@tabler/icons-react';
 
 export default function Certifications() {
     const sorted = [...certifications].sort((a, b) => {
@@ -43,7 +43,7 @@ export default function Certifications() {
                                             <p className="text-xl md:text-2xl text-foreground leading-snug flex items-start gap-3">
                                                 <span>{cert.name}</span>
                                                 {cert.link && (
-                                                    <ArrowUpRightIcon className="size-5 shrink-0 mt-1 opacity-60 group-hover:opacity-100 group-hover:size-6 transition-all -translate-x-2 translate-y-1 group-hover:-translate-y-1 group-hover:translate-x-0" />
+                                                    <IconArrowUpRight className="mt-1 size-5 shrink-0 -translate-x-2 translate-y-1 opacity-60 transition-[opacity,transform] duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0 group-hover:opacity-100" />
                                                 )}
                                             </p>
                                             <p className="text-foreground-muted">
