@@ -2,6 +2,7 @@ import { siteConfig } from '@/config/site';
 import { BurgerMenu } from '@/components/shared/BurgerMenu';
 import { Logo } from '@/components/ui/logo';
 import { StickyHeader } from '@/components/ui/sticky-header';
+import SocialsList from '@/components/shared/SocialsList';
 
 export default function Header() {
     return (
@@ -12,27 +13,7 @@ export default function Header() {
             </a>
 
             <div className="flex items-center space-x-6">
-                {siteConfig.socials.length > 0 && (
-                    <div className="flex space-x-4">
-                        {siteConfig.socials
-                            .filter((social) => social.href)
-                            .map((social) => {
-                                const Icon = social.icon;
-                                return (
-                                    <a
-                                        key={social.label}
-                                        href={social.href}
-                                        aria-label={`Lien vers ${social.label}`}
-                                        className="p-2"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Icon />
-                                    </a>
-                                );
-                            })}
-                    </div>
-                )}
+                <SocialsList className="flex space-x-4" />
 
                 <BurgerMenu />
             </div>
