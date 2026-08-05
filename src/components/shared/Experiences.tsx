@@ -9,7 +9,7 @@ export default function Experiences() {
     if (sorted.length === 0) return null;
 
     return (
-        <section id="experiences" className="container mx-auto px-10 py-24">
+        <section id="experiences" className="container mx-auto px-10 py-24 scroll-mt-20">
             <h3 className="section-title text-center sm:text-left">Expériences Professionnelles</h3>
 
             <ul className="relative mt-10 space-y-14 border-l border-foreground-subtle/25 pl-6 md:mt-14 md:space-y-20 md:pl-12">
