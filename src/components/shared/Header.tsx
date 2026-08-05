@@ -1,10 +1,14 @@
 import { siteConfig } from '@/config/site';
-import { BurgerMenu } from '@components/ui/burger-menu';
+import { BurgerMenu } from '@/components/shared/BurgerMenu';
+import { Logo } from '@/components/ui/logo';
 
 export default function Header() {
     return (
         <header className="flex items-center justify-between p-4 fixed z-10 w-full">
-            <div className="font-fraunces">Cyril Fischer</div>
+            <a href="#top" className="flex items-center">
+                <Logo className="size-10 mr-4" />
+                <div className="font-fraunces text-xl">{siteConfig.name}</div>
+            </a>
 
             <div className="flex items-center space-x-6">
                 {siteConfig.socials.length > 0 && (

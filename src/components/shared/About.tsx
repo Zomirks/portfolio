@@ -9,7 +9,7 @@ export default function About() {
         <section id="about" className="frame-container container mx-auto py-24 px-4 md:px-0">
             <div className="panel-header">
                 <div className="notch-title">
-                    <h3>A propos</h3>
+                    <h3>À propos</h3>
                 </div>
                 <div className="notch-roof" />
             </div>

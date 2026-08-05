@@ -1,6 +1,6 @@
 import { certifications, type Certification } from '@/config/certifications';
 import { IconArrowUpRight } from '@tabler/icons-react';
-import Reveal from '../ui/reveal';
+import Reveal from '@components/ui/reveal';
 
 export default function Certifications() {
     const sorted = [...certifications].sort((a, b) => {

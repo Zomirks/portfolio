@@ -15,6 +15,11 @@ export const siteConfig = {
         user: 'contact',
         domain: 'cyril-fischer.com',
     },
+    nav: [
+        { label: 'À propos', href: '#about' },
+        { label: 'Expériences', href: '#experiences' },
+        { label: 'Certifications', href: '#certifications' },
+    ],
     socials: [
         { label: 'Github', href: 'https://github.com/Zomirks', icon: IconBrandGithub },
         {

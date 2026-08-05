@@ -213,3 +213,69 @@
         transform: translateY(0);
     }
 }
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+}
+
+.menu-link {
+    font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+    font-size: clamp(2.5rem, 12vw, 7rem);
+    line-height: 1.05;
+    color: var(--foreground-muted);
+    text-align: center;
+    transition: color 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--foreground);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .menu-overlay[data-state='open'] {
+        animation: menu-in 0.3s ease both;
+    }
+
+    .menu-overlay[data-state='closed'] {
+        animation: menu-out 0.2s ease both;
+    }
+
+    .menu-overlay[data-state='open'] .menu-link {
+        animation: menu-link-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+}
+
+@keyframes menu-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes menu-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes menu-link-in {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
